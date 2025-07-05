@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customized Time Slot Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Schedule Your Delivery</h1>
+        <form id="deliveryForm">
+            <input type="text" id="address" placeholder="Enter your address (e.g., madurai)" required>
+            <input type="date" id="date" required>
+            <select id="time" required>
+                <option value="" disabled selected>Select a time slot</option>
+                <option value="9 AM - 11 AM">9 AM - 11 AM</option>
+                <option value="1 PM - 3 PM">1 PM - 3 PM</option>
+                <option value="5 PM - 7 PM">5 PM - 7 PM</option>
+            </select>
+            <input type="tel" id="phone" placeholder="Enter your phone (e.g., +919876543210)" required>
+            <input type="hidden" id="userId">
+            <button type="submit">Schedule Delivery</button>
+            <button type="button" id="suggestButton">Suggest Time Slot</button>
+        </form>
+        <p id="confirmation"></p>
+        <h2>Delivery Location</h2>
+        <div id="map" style="height: 300px; width: 100%; margin-top: 20px;"></div>
+        <div id="liveUpdates" style="margin-top: 20px;"></div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
